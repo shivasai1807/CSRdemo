@@ -1,0 +1,186 @@
+CSR WEBSITE FEATURES - IMPLEMENTATION PROMPTS
+
+--------------------------------------------
+1. CSR Activities Map (Location-based)
+--------------------------------------------
+
+Purpose:
+Show where CSR initiatives are happening geographically.
+
+Data Structure:
+[
+  {
+    "title": "Tree Plantation Drive",
+    "location": "Hyderabad",
+    "coordinates": { "lat": 17.3850, "lng": 78.4867 },
+    "category": "Environment",
+    "impact": "500 trees planted"
+  }
+]
+
+UI Structure:
+- Section Title: "Our CSR Presence Across India"
+- Full-width interactive map
+- Markers for each activity
+- Popup on click with:
+  - Title
+  - Location
+  - Category
+  - Impact
+
+Placement:
+After Hero section OR Impact section
+
+CLI Prompt:
+Create a CSR Activities Map section using React and Leaflet.js.
+Requirements:
+- Display a full-width interactive map
+- Add markers for CSR activities using latitude and longitude
+- On clicking a marker, show a popup with:
+  - Title
+  - Location
+  - Category
+  - Impact
+- Use mock JSON data
+- Ensure responsiveness
+- Section title: "Our CSR Presence Across India"
+
+
+--------------------------------------------
+2. Beneficiary Stories / Testimonials
+--------------------------------------------
+
+Purpose:
+Show real human impact of CSR efforts.
+
+Data Structure:
+[
+  {
+    "name": "Ravi Kumar",
+    "location": "Andhra Pradesh",
+    "story": "Thanks to this initiative, my village now has clean drinking water.",
+    "image": "/images/testimonial1.jpg"
+  }
+]
+
+UI Structure:
+- Section Title: "Voices of Impact"
+- Card layout or carousel
+
+Each Card:
+- Image
+- Name
+- Location
+- Story
+
+Placement:
+After CSR initiatives OR Map section
+
+CLI Prompt:
+Create a Beneficiary Stories section using React.
+Requirements:
+- Section title: "Voices of Impact"
+- Display testimonials in card layout or carousel
+- Each card includes:
+  - Image
+  - Name
+  - Location
+  - Story text
+- Use mock JSON data
+- Responsive design
+- Add hover effects
+
+
+--------------------------------------------
+3. CSR Gallery (Real Activities)
+--------------------------------------------
+
+Purpose:
+Provide visual proof of CSR activities.
+
+Data Structure:
+[
+  {
+    "image": "/images/gallery1.jpg",
+    "title": "Tree Plantation Drive",
+    "location": "Hyderabad"
+  }
+]
+
+UI Structure:
+- Section Title: "CSR in Action"
+- Grid layout (3–4 columns)
+
+Each Item:
+- Image
+- Hover overlay:
+  - Title
+  - Location
+
+Placement:
+After testimonials OR before footer
+
+CLI Prompt:
+Create a CSR Gallery section using React.
+Requirements:
+- Section title: "CSR in Action"
+- Responsive grid layout
+- Hover overlay with title and location
+- Click to open modal/lightbox
+- Use mock data
+- Smooth animations
+
+
+--------------------------------------------
+4. FAQ Section
+--------------------------------------------
+
+Purpose:
+Explain CSR clearly and improve usability.
+
+Data Structure:
+[
+  {
+    "question": "What is CSR?",
+    "answer": "Corporate Social Responsibility refers to..."
+  }
+]
+
+UI Structure:
+- Section Title: "Frequently Asked Questions"
+- Accordion layout
+
+Placement:
+Near footer OR last section before contact
+
+CLI Prompt:
+Create a FAQ section using React.
+Requirements:
+- Section title: "Frequently Asked Questions"
+- Accordion UI
+- Each item includes:
+  - Question
+  - Answer
+- Expand/collapse functionality
+- Accessible and responsive design
+
+
+--------------------------------------------
+FINAL PAGE FLOW
+--------------------------------------------
+
+Hero Section
+↓
+Impact Section
+↓
+CSR Activities Map
+↓
+Initiatives
+↓
+Testimonials
+↓
+CSR Gallery
+↓
+FAQ Section
+↓
+Footer
