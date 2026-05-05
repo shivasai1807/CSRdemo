@@ -1,4 +1,11 @@
 {
-    "nextPort": 3001,
-    "agents": []
-  }
+  "nextPort": 3002,
+  "agents": [
+    {
+      "agent": "agent1",
+      "feature": "csr-map",
+      "port": 3001,
+      "pid": 805
+    }
+  ]
+}
