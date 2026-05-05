@@ -1,11 +1,19 @@
 {
-  "nextPort": 3002,
+  "nextPort": 3006,
   "agents": [
     {
+      "id": "agent1-5834a4",
       "agent": "agent1",
       "feature": "csr-map",
-      "port": 3001,
-      "pid": 805
+      "port": 3004,
+      "pid": 1108
+    },
+    {
+      "id": "agent1-96bfd6",
+      "agent": "agent1",
+      "feature": "gallery",
+      "port": 3005,
+      "pid": 1138
     }
   ]
 }
