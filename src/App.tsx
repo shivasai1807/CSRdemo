@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigation } from './components/Navigation';
 import { Slideshow } from './components/Slideshow';
 import { About } from './components/About';
+import { CSRMap } from './components/CSRMap';
 import { Registrations } from './components/Registrations';
 import { Awards } from './components/Awards';
 import { Speakers } from './components/Speakers';
