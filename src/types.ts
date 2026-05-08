@@ -20,3 +20,11 @@ export interface Section {
   id: string;
   label: string;
 }
+
+export interface Story {
+  id: string;
+  name: string;
+  location: string;
+  story: string;
+  image: string;
+}
