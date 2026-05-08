@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigation } from './components/Navigation';
 import { Slideshow } from './components/Slideshow';
 import { About } from './components/About';
+import { BeneficiaryStories } from './components/BeneficiaryStories';
 import { Registrations } from './components/Registrations';
 import { Awards } from './components/Awards';
 import { Speakers } from './components/Speakers';
@@ -25,6 +26,9 @@ export default function App() {
         </section>
         <section id="about">
           <About />
+        </section>
+        <section id="impact">
+          <BeneficiaryStories />
         </section>
         <section id="registrations">
           <Registrations />
