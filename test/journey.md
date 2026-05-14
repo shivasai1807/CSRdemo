@@ -274,3 +274,6 @@ This project demonstrates:
 ```bash
 ./agent-runner.sh logs <agent-id>
 ```
+# port setup
+Added framework-aware dynamic port orchestration that automatically detects frontend, backend, and database technologies and allocates ports based on their respective default ranges.
+Also introduced user confirmation for detected base ports, allowing manual override before initializing the orchestration environment.
