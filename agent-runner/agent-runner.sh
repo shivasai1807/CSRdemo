@@ -338,7 +338,13 @@ start_agent() {
   # Launch dev server with absolute log path
   (
     cd "$worktree_path"
-    PORT="$frontend_port" npm run dev >> "$log_file" 2>&1
+    if [[ "$frontend_fw" == "vite" ]]; then
+      npm run dev -- --port "$frontend_port" >> "$log_file" 2>&1
+    elif [[ "$frontend_fw" == "angular" ]]; then
+      npm run start -- --port "$frontend_port" >> "$log_file" 2>&1
+    else
+      PORT="$frontend_port" npm run dev >> "$log_file" 2>&1
+    fi
   ) &
   local pid=$!
 
@@ -433,16 +439,18 @@ stop_agent() {
   echo ""
   echo "  1)  Merge branch into main"
   echo "  2)  Push branch & open PR"
-  echo "  3)  Stop only — no merge"
+  echo "  3)  Commit and push it"
+  echo "  4)  Stop only — no merge"
   echo ""
-  read -r -p "  Your choice [1/2/3]: " choice </dev/tty
+  read -r -p "  Your choice [1/2/3/4]: " choice </dev/tty
   echo ""
 
   local branch="$agent_id"
   case "$choice" in
     1) merge_branch "$branch" ;;
     2) create_pr "$branch"    ;;
-    3) step "No merge performed" ;;
+    3) commit_and_push "$agent_id" ;;
+    4) step "No merge performed" ;;
     *) warn "Invalid choice — skipping merge" ;;
   esac
 
@@ -620,6 +628,32 @@ show_help() {
   echo "  logs  <agent-id>               Tail live logs for an agent"
   echo ""
   divider
+  echo -e "  ${BOLD}EXAMPLES${RESET}"
+  echo ""
+  echo "  ./agent-runner.sh start"
+  echo "  ./agent-runner.sh start agent-gallery feature/new-ui"
+  echo "  ./agent-runner.sh stop  agent-gallery"
+  echo "  ./agent-runner.sh logs  agent-gallery"
+  echo ""
+}
+
+# ─────────────────────────────────────────────
+#  Command Router
+# ─────────────────────────────────────────────
+case "$COMMAND" in
+  start)    start_agent    ;;
+  stop)     stop_agent     ;;
+  stop-all) stop_all_agents ;;
+  status)   status_agents  ;;
+  logs)     view_logs      ;;
+  help|--help|-h) show_help ;;
+  *)
+    error "Unknown command: '${COMMAND:-<none>}'"
+    show_help
+    exit 1
+    ;;
+esac
+vider
   echo -e "  ${BOLD}EXAMPLES${RESET}"
   echo ""
   echo "  ./agent-runner.sh start"
